@@ -110,7 +110,7 @@ public class Main {
                     System.out.println("ERROR. Debe ingresar los minutos de fin validos. (0-59).");
                 }
             } while (error);
-            
+
             //Refactorizacion de cogido aplicando el LocalTime
             inicio = LocalTime.of(horaInicio, minutoInicio);
             fin = LocalTime.of(horaFin, minutoFin);

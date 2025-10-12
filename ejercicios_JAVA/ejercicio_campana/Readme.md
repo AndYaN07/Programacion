@@ -1,4 +1,4 @@
-# 4.🔔 Dar la campanada
+# 🔔 Dar la campanada
 
 ## Descripción
 

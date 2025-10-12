@@ -1,5 +1,6 @@
 package DarLaCampanada;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -35,11 +36,23 @@ public class Main {
 
         //Controlamos las entradas para verificar que esten correctas
 
+        //Update 11:50h. Implementar Try-Catch
         do {
             //Valiamos hora de entrada
             do {
-                System.out.println("Ingrese la hora de inicio:");
-                horaInicio = scn.nextInt();
+                //Realizamos bucle de verificacion de entrada de datos para verificar que se ingrese un numero
+                boolean esNumero = false;
+                while (!esNumero) {
+                    try {
+                        System.out.println("Ingrese la hora de inicio:");
+                        horaInicio = scn.nextInt();
+                        esNumero = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("ERROR. Solo se admiten numeros enteros. Intente de nuevo.");
+                        scn.nextLine();
+                        esNumero = false;
+                    }
+                }//While de validacion esNumero
                 error = (horaInicio < 0 || horaInicio > 23);
                 if (error) {
                     System.out.println("Debe ingresar una hora de inicio valida. (0-23).");
@@ -48,8 +61,19 @@ public class Main {
 
             //Validamos los minutos de entrada
             do {
-                System.out.println("Ingrese los minutos de inicio:");
-                minutoInicio = scn.nextInt();
+                //Implementamos misma logica de try-catch
+                boolean esNumero = false;
+                while (!esNumero) {
+                    try {
+                        System.out.println("Ingrese los minutos de inicio:");
+                        minutoInicio = scn.nextInt();
+                        esNumero = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("ERROR. Solo se admiten numeros enteros. Intente de nuevo.");
+                        scn.nextLine();
+                        esNumero = false;
+                    }
+                }//While de validacion esNumero
                 error = (minutoInicio < 0 || minutoInicio > 59);
                 if (error) {
                     System.out.println("ERROR. Debe ingresar los minutos de inicio validos. (0-59).");
@@ -58,8 +82,19 @@ public class Main {
 
             //Validamos hora de fin
             do {
-                System.out.println("Ingrese la hora de fin:");
-                horaFin = scn.nextInt();
+                //Implementamos misma logica de try-catch
+                boolean esNumero = false;
+                while (!esNumero) {
+                    try {
+                        System.out.println("Ingrese la hora de fin:");
+                        horaFin = scn.nextInt();
+                        esNumero = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("ERROR. Solo se admiten numeros enteros. Intente de nuevo.");
+                        scn.nextLine();
+                        esNumero = false;
+                    }
+                }//While de validacion esNumero
                 error = (horaFin < 0 || horaFin > 23);
                 if (error) {
                     System.out.println("ERROR. Debe ingresar una hora de fin valida. (0-23).");
@@ -68,8 +103,19 @@ public class Main {
 
             //Validamos minutos de fin
             do {
-                System.out.println("Ingrese los minutos de fin:");
-                minutoFin = scn.nextInt();
+                //Implementamos misma logica de try-catch
+                boolean esNumero = false;
+                while (!esNumero) {
+                    try {
+                        System.out.println("Ingrese los minutos de fin:");
+                        minutoFin = scn.nextInt();
+                        esNumero = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("ERROR. Solo se admiten numeros enteros. Intente de nuevo.");
+                        scn.nextLine();
+                        esNumero = false;
+                    }
+                }//While de validacion esNumero
                 error = (minutoFin < 0 || minutoFin > 59);
                 if (error) {
                     System.out.println("ERROR. Debe ingresar los minutos de fin validos. (0-59).");
